@@ -72,7 +72,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 body {
-  margin: 0px;
+  margin: 0px 0px;
   width: 100%;
   min-height: 100%;
   overflow-x: hidden;
@@ -98,7 +98,7 @@ body {
 }
 
 main {
-  margin: 0px auto;
+  margin: 0px 0px;
   width: 100%;
   max-width: 1600px;
   min-height: 100vh;
@@ -124,24 +124,24 @@ main {
 }
 
 main.fillHeight {
-  padding: 0px 150px;
+  padding: 0px;
 }
 
 @media (max-width: 1080px) {
   main.fillHeight {
-    padding: 0px 100px;
+    padding: 0px;
   }
 }
 
 @media (max-width: 768px) {
   main.fillHeight {
-    padding: 0px 50px;
+    padding: 0px;
   }
 }
 
 @media (max-width: 480px) {
   main.fillHeight {
-    padding: 0px 25px;
+    padding: 0px;
   }
 }
 
@@ -426,7 +426,7 @@ p>a::after {
   position: fixed;
   top: 0px;
   z-index: 11;
-  padding: 0px 50px;
+  padding: 0px;
   width: 100%;
   height: var(--nav-height);
   background-color: rgba(10, 25, 47, 0.85);
@@ -439,13 +439,13 @@ p>a::after {
 
 @media (max-width: 1080px) {
   .hLTFFw {
-    padding: 0px 40px;
+    padding: 0px;
   }
 }
 
 @media (max-width: 768px) {
   .hLTFFw {
-    padding: 0px 25px;
+    padding: 0px;
   }
 }
 
@@ -461,6 +461,8 @@ p>a::after {
   font-family: var(--font-mono);
   counter-reset: item 0;
   z-index: 12;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .kFCHyX .logo {
@@ -2097,7 +2099,7 @@ p>a::after {
 }
 
 .gatsby-image-wrapper [data-main-image] {
-  opacity: 0;
+  opacity: 1;
   transform: translateZ(0);
   transition: opacity .25s linear;
   will-change: opacity;
@@ -2127,7 +2129,7 @@ p>a::after {
 }
 
 .gatsby-image-wrapper [data-main-image] {
-  opacity: 0;
+  opacity: 1;
   transform: translateZ(0);
   transition: opacity .25s linear;
   will-change: opacity
@@ -2142,5 +2144,5 @@ p>a::after {
 }
 
 .gatsby-image-wrapper [data-placeholder-image] {
-  opacity: 0 !important
+  opacity: 1 !important
 }
