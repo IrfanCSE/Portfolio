@@ -12,9 +12,9 @@ export class AppComponent {
   workTab = "panel-0";
   href = "";
   constructor() {
-    if(this.env){
-      this.href = "Portfolio";
-    }
+    // if(this.env){
+    //   this.href = "Portfolio";
+    // }
   }
 
   funWorkTab(name:string): void{
