@@ -102,7 +102,7 @@ main {
   width: 100%;
   max-width: 1600px;
   min-height: 100vh;
-  padding: 200px 150px;
+  padding: 0px 150px;
 }
 
 @media (max-width: 1080px) {
@@ -124,24 +124,24 @@ main {
 }
 
 main.fillHeight {
-  padding: 0px;
+  // padding: 0px;
 }
 
 @media (max-width: 1080px) {
   main.fillHeight {
-    padding: 0px;
+    // padding: 0px;
   }
 }
 
 @media (max-width: 768px) {
   main.fillHeight {
-    padding: 0px;
+    // padding: 0px;
   }
 }
 
 @media (max-width: 480px) {
   main.fillHeight {
-    padding: 0px;
+    // padding: 0px;
   }
 }
 
@@ -957,6 +957,7 @@ p>a::after {
   align-items: flex-start;
   min-height: 100vh;
   padding: 0px;
+  text-align: justify;
 }
 
 @media (max-width: 480px) and (min-height: 700px) {
@@ -987,7 +988,7 @@ p>a::after {
 
 .eEjAsd p {
   margin: 20px 0px 0px;
-  max-width: 540px;
+  max-width: 680px;
 }
 
 .eEjAsd .email-link {
