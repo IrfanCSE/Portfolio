@@ -141,7 +141,7 @@ main.fillHeight {
 
 @media (max-width: 480px) {
   main.fillHeight {
-    // padding: 0px;
+    padding: 25px;
   }
 }
 
@@ -962,7 +962,8 @@ p>a::after {
 
 @media (max-width: 480px) and (min-height: 700px) {
   .eEjAsd {
-    padding-bottom: 10vh;
+    // padding-bottom: 10vh;
+    min-height: 50vh;
   }
 }
 
@@ -2025,7 +2026,7 @@ p>a::after {
 
 @media (max-width: 768px) {
   .eXnPVF {
-    margin: 0px auto 50px;
+    margin: 0px auto 0px;
   }
 }
 
