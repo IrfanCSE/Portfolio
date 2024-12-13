@@ -2,6 +2,7 @@
 const projects = [
     {
         title: "E-commerce Platform",
+        company: "Kaz Software",
         description: "A full-stack e-commerce platform with React, Node.js, and MongoDB",
         image: "https://source.unsplash.com/random/800x600?ecommerce",
         github: "https://github.com",
@@ -10,6 +11,7 @@ const projects = [
     },
     {
         title: "Task Management App",
+        company: "Kaz Software",
         description: "A responsive task management application with drag-and-drop functionality",
         image: "https://source.unsplash.com/random/800x600?task",
         github: "https://github.com",
@@ -18,6 +20,7 @@ const projects = [
     },
     {
         title: "Weather Dashboard",
+        company: "Kaz Software",
         description: "Real-time weather application using OpenWeather API and React",
         image: "https://source.unsplash.com/random/800x600?weather",
         github: "https://github.com",
@@ -27,12 +30,12 @@ const projects = [
 ];
 
 const skills = [
-    { name: "HTML5", percentage: 90 },
-    { name: "CSS3", percentage: 85 },
-    { name: "JavaScript", percentage: 80 },
-    { name: "React", percentage: 75 },
-    { name: "Node.js", percentage: 70 },
-    { name: "SQL", percentage: 95 },
+    { name: ".NET (C#)", percentage: 90 },
+    { name: "ASP .NET", percentage: 80 },
+    { name: ".NET Core & ASP.Net Core", percentage: 80 },
+    { name: "Ts & Js", percentage: 70 },
+    { name: "React", percentage: 70 },
+    { name: "SQL", percentage: 90 },
 ];
 
 // DOM Elements
@@ -85,7 +88,12 @@ function displayProjects() {
     }
 
     projectsGrid.innerHTML = projects.map(project => `
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-1 transition-transform duration-300">
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-1 transition-transform duration-300 relative">
+            <!-- Company Name Badge -->
+            <div class="absolute top-2 right-2 bg-blue-500 text-white text-sm px-3 py-1 rounded-full shadow-md">
+                ${project.company}
+            </div>
+            
             <img src="${project.image}" alt="${project.title}" class="w-full h-48 object-cover">
             <div class="p-6">
                 <h3 class="text-xl font-semibold mb-2">${project.title}</h3>
@@ -108,6 +116,7 @@ function displayProjects() {
             </div>
         </div>
     `).join('');
+    
 }
 // Populate Projects
 function displaySkils() {
