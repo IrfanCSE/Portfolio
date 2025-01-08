@@ -60,16 +60,19 @@ mobileMenu.addEventListener('click', (e) => {
 
 // Active Navigation Link
 function setActiveLink() {
-    const sections = document.querySelectorAll('.section');
-    const navHeight = document.querySelector('.navbar').offsetHeight;
+    const sections = document.querySelectorAll('section');
+    const navHeight = document.querySelector('.navbar')?.offsetHeight ?? 0;
     
     sections.forEach(section => {
         const sectionTop = section.offsetTop - navHeight - 20;
-        const sectionBottom = sectionTop + section.offsetHeight;
-        const scrollPosition = window.scrollY;
+        const sectionHeight = section.offsetHeight;
+        const sectionMiddle = sectionTop + sectionHeight / 2; // Middle of the section
+        const scrollPosition = window.scrollY + window.innerHeight / 2; // Middle of the viewport
         
-        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+        if (scrollPosition >= sectionMiddle && scrollPosition < sectionMiddle + sectionHeight / 2) {
             const currentId = section.getAttribute('id');
+            const navItems = document.querySelectorAll('.nav-links a');
+
             navItems.forEach(item => {
                 item.classList.remove('active');
                 if (item.getAttribute('href') === `#${currentId}`) {
@@ -195,10 +198,7 @@ function revealOnScroll() {
 }
 
 // Initialize
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM loaded');
-    console.log('Projects grid element:', projectsGrid);
-    
+document.addEventListener('DOMContentLoaded', () => {    
     displaySkils();
     displayProjects();
     

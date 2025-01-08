@@ -45,6 +45,21 @@
             text-shadow: 0 0 5px #ff003c, 0 0 10px #ff003c, 0 0 20px #ff003c, 0 0 40px #ff003c;
         }
 
+        .nav-links a.active {
+            color: #007BFF;
+            /* Change the text color to blue (or any color you want) */
+            font-weight: bold;
+            /* Make the text bold */
+            text-decoration: underline;
+            /* Add an underline to the active link */
+            background-color: rgba(0, 123, 255, 0.1);
+            /* Add a light background for emphasis */
+            padding: 5px 10px;
+            /* Add some padding around the text */
+            border-radius: 5px;
+            /* Optionally add rounded corners */
+        }
+
         @keyframes typing {
             from {
                 width: 0
@@ -70,12 +85,41 @@
 </head>
 
 <body class="bg-neutral-50">
-    <nav class="fixed top-0 w-full bg-white shadow-md z-50">
+    <nav class="navbar fixed top-0 w-full bg-white shadow-md z-50">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <div class="text-2xl font-bold">
                 Dev.<span class="text-blue-500">Irfan</span>
             </div>
-            <ul class="hidden md:flex space-x-8">
+            <ul class="nav-links hidden md:flex space-x-2">
+                <li><a href="#home" class="text-gray-700 hover:text-blue-500 transition-colors underline font-bold">I’m
+                        Irfan.</a></li>
+                <li>
+                    <p class="text-gray-700 transition-colors">To discuss</p>
+                </li>
+                <li><a href="#about"
+                        class="text-gray-700 hover:text-blue-500 transition-colors underline font-bold">about</a></li>
+                <li><span class="text-gray-700 transition-colors">my</span></li>
+                <li><a href="#experience"
+                        class="text-gray-700 hover:text-blue-500 transition-colors underline font-bold">experience,</a>
+                </li>
+                <li><a href="#skills"
+                        class="text-gray-700 hover:text-blue-500 transition-colors underline font-bold">skills</a></li>
+                <li><span class="text-gray-700 transition-colors">and</span></li>
+                <li><a href="#projects"
+                        class="text-gray-700 hover:text-blue-500 transition-colors underline font-bold">projects</a>
+                </li>
+                <li><span class="text-gray-700 transition-colors">please feel free to</span></li>
+                <li><a href="#contact"
+                        class="text-gray-700 hover:text-blue-500 transition-colors underline font-bold">contact me.</a>
+                </li>
+
+                <li>
+                    <a href="./assets/Irfanul_Hasan.pdf" download="Irfanul_Hasan.pdf"
+                        class="bg-blue-600 text-white p-2 rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-300">
+                        <i class="fas fa-download text-xl mr-2"></i>Resume</a>
+                </li>
+            </ul>
+            <!-- <ul class="hidden md:flex space-x-8">
                 <li><a href="#home" class="text-gray-700 hover:text-blue-500 transition-colors">I'm</a></li>
                 <li><a href="#about" class="text-gray-700 hover:text-blue-500 transition-colors">About</a></li>
                 <li><a href="#experience" class="text-gray-700 hover:text-blue-500 transition-colors">Experience</a>
@@ -89,7 +133,7 @@
                         class="bg-blue-600 text-white p-2 rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-300">
                         <i class="fas fa-download text-xl mr-2"></i>Resume</a>
                 </li>
-            </ul>
+            </ul> -->
             <div class="md:hidden cursor-pointer" id="hamburger">
                 <div class="w-6 h-0.5 bg-gray-700 mb-1.5"></div>
                 <div class="w-6 h-0.5 bg-gray-700 mb-1.5"></div>
@@ -97,7 +141,7 @@
             </div>
         </div>
         <!-- Mobile Menu -->
-        <div class="hidden md:hidden" id="mobile-menu">
+        <div class="nav-links hidden md:hidden" id="mobile-menu">
             <div class="px-2 pt-2 pb-3 space-y-1 bg-white shadow-lg">
                 <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-blue-500">I'm</a>
                 <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-blue-500">About</a>
@@ -422,13 +466,13 @@
     </section>
 
 
-    <section id="about" class="py-20 hover:bg-sky-50">
+    <section id="about" class="py-20 hover:bg-sky-50 duration-300">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-bold text-blue-800 text-center mb-12">About Me</h2>
-            <div class="max-w-3xl mx-auto text-gray-600 text-lg space-y-6">
+            <div class="max-w-3xl mx-auto text-gray-600 text-lg space-y-6 filter grayscale hover:grayscale-0">
                 <div class="flex flex-col items-center">
                     <img src="./assets/Ifran_Photo.jpeg" alt="Profile Photo"
-                        class="w-40 h-40 rounded-full mb-6 shadow-md transition-all duration-300 filter grayscale hover:grayscale-0">
+                        class="w-40 h-40 rounded-full mb-6 shadow-md transition-all ">
                     <p class="text-center">I am a passionate full-stack developer with a strong foundation in web
                         technologies.
                         I enjoy creating efficient, scalable, and user-friendly solutions to complex problems.</p>
@@ -443,7 +487,7 @@
 
     <section id="experience" class="bg-neutral-100 py-20 hover:bg-sky-100">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12">Work Experiences</h2>
+            <h2 class="text-4xl text-blue-800 font-bold text-center mb-12">Work Experiences</h2>
 
             <!-- <div class="bg-gray-100 p-6"> -->
             <div class="max-w-3xl mx-auto">
@@ -490,7 +534,7 @@
 
     <section id="skills" class="py-20 hover:bg-sky-50">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12">Professional Skills</h2>
+            <h2 class="text-4xl text-blue-800 font-bold text-center mb-12">Professional Skills</h2>
             <div id="skills-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
                 <!-- skills-grid -->
             </div>
@@ -534,16 +578,16 @@
 
     <section id="projects" class="py-20 bg-neutral-100 hover:bg-sky-100">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12">Projects</h2>
+            <h2 class="text-4xl text-blue-800 font-bold text-center mb-12">Projects</h2>
             <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Projects will be populated by JavaScript -->
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-20 hover:bg-sky-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12">Contact Me</h2>
+    <section id="contact" class="h-screen py-20 hover:bg-sky-50">
+        <div class="container mx-auto px-4 mb-6">
+            <h2 class="text-4xl text-blue-800 font-bold text-center mb-12">Contact Me</h2>
 
             <!-- Social Links -->
             <div class="max-w-3xl mx-auto mb-12">
@@ -588,7 +632,7 @@
         </div>
 
         <!-- Go Up Button -->
-        <div class="flex justify-center items-center mt-12">
+        <div class="flex justify-center items-center mt-8">
             <a href="#top"
                 class="bg-blue-500 text-white p-4 rounded-full shadow-lg hover:bg-blue-600 transition-colors duration-300">
                 <i class="fas fa-arrow-up text-xl"></i>
