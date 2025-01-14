@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize typewriter effect
     const typewriterElement = document.querySelector('.typewriter');
     if (typewriterElement) {
-        typeWriter(typewriterElement, 'Full Stack Developer');
+        typeWriter(typewriterElement, '<Full Stack Software Developer/>');
     }
     
     // Add scroll event listeners
