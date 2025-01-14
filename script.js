@@ -181,6 +181,23 @@ function typeWriter(element, text, speed = 100) {
     
     type();
 }
+function calculateDateDifference() {
+    const startDate = new Date('2021-01-01');
+    const today = new Date();
+
+    let years = today.getFullYear() - startDate.getFullYear();
+    let months = today.getMonth() - startDate.getMonth();
+
+    // Adjust if the current month is before the start month
+    if (months < 0) {
+        years--;
+        months += 12;
+    }
+
+    // Update the span with the calculated years and months
+    const span = document.getElementById('date-difference');
+    span.textContent = `(${years}+ years)`;
+}
 
 // Scroll Animation
 function revealOnScroll() {
@@ -201,6 +218,7 @@ function revealOnScroll() {
 document.addEventListener('DOMContentLoaded', () => {    
     displaySkils();
     displayProjects();
+    calculateDateDifference();
     
     // Initialize typewriter effect
     const typewriterElement = document.querySelector('.typewriter');
