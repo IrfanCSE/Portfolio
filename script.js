@@ -3,7 +3,7 @@ const projects = [
     {
         title: "RegAnalytics",
         company: "Kaz Software",
-        description: "A full-stack e-commerce platform with React, Node.js, and MongoDB",
+        description: "RegAnalytics Software and services for regulatory compliance",
         image: "./assets/reg.png",
         // github: "https://github.com",
         demo: "https://regplus.reganalytics.com",
