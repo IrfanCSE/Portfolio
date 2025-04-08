@@ -9,33 +9,13 @@ const projects = [
         demo: "https://demo.com",
         technologies: ["React", "Node.js", "MongoDB", "Express"]
     },
-    {
-        title: "Task Management App",
-        company: "Kaz Software",
-        description: "A responsive task management application with drag-and-drop functionality",
-        image: "https://source.unsplash.com/random/800x600?task",
-        github: "https://github.com",
-        demo: "https://demo.com",
-        technologies: ["Vue.js", "Firebase", "Tailwind CSS"]
-    },
-    {
-        title: "Weather Dashboard",
-        company: "Kaz Software",
-        description: "Real-time weather application using OpenWeather API and React",
-        image: "https://source.unsplash.com/random/800x600?weather",
-        github: "https://github.com",
-        demo: "https://demo.com",
-        technologies: ["React", "OpenWeather API", "Chart.js"]
-    }
 ];
 
 const skills = [
     { name: ".NET (C#)", percentage: 90 },
-    { name: "ASP .NET", percentage: 80 },
-    { name: ".NET Core & ASP.Net Core", percentage: 80 },
-    { name: "Ts & Js", percentage: 70 },
-    { name: "React", percentage: 70 },
-    { name: "SQL", percentage: 90 },
+    { name: "MSSQL (SQL)", percentage: 90 },
+    { name: "Ts & Js", percentage: 80 },
+    { name: "React", percentage: 80 }
 ];
 
 // DOM Elements
