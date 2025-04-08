@@ -1,13 +1,13 @@
 // Project Data
 const projects = [
     {
-        title: "E-commerce Platform",
+        title: "RegAnalytics",
         company: "Kaz Software",
         description: "A full-stack e-commerce platform with React, Node.js, and MongoDB",
-        image: "https://source.unsplash.com/random/800x600?ecommerce",
-        github: "https://github.com",
-        demo: "https://demo.com",
-        technologies: ["React", "Node.js", "MongoDB", "Express"]
+        image: "./assets/reg.png",
+        // github: "https://github.com",
+        demo: "https://regplus.reganalytics.com",
+        technologies: [".Net 6", "C#","React", "Typscript", "MSSQL", "AWS S3"],
     },
 ];
 
@@ -73,11 +73,13 @@ function displayProjects() {
     projectsGrid.innerHTML = projects.map(project => `
         <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-1 transition-transform duration-300 relative">
             <!-- Company Name Badge -->
-            <div class="absolute top-2 right-2 bg-blue-500 text-white text-sm px-3 py-1 rounded-full shadow-md">
+            <div class="absolute top-2 right-2 bg-yellow-500 text-white text-sm px-3 py-1 rounded-full shadow-md">
                 ${project.company}
             </div>
             
-            <img src="${project.image}" alt="${project.title}" class="w-full h-48 object-cover">
+            <div class="aspect-w-16 aspect-h-9 w-full">
+                <img src="${project.image}" alt="${project.title}" class="object-cover" />
+            </div>
             <div class="p-6">
                 <h3 class="text-xl font-semibold mb-2">${project.title}</h3>
                 <p class="text-gray-600 mb-4">${project.description}</p>
@@ -87,10 +89,12 @@ function displayProjects() {
                     ).join('')}
                 </div>
                 <div class="flex space-x-4">
-                    <a href="${project.github}" target="_blank" 
-                       class="text-blue-500 hover:text-blue-700 transition-colors">
-                        <i class="fab fa-github mr-2"></i>GitHub
-                    </a>
+                    ${project.github ? `
+                        <a href="${project.github}" target="_blank" 
+                           class="text-blue-500 hover:text-blue-700 transition-colors">
+                            <i class="fab fa-github mr-2"></i>GitHub
+                        </a>
+                    ` : ''}
                     <a href="${project.demo}" target="_blank"
                        class="text-blue-500 hover:text-blue-700 transition-colors">
                         <i class="fas fa-external-link-alt mr-2"></i>Live Demo
