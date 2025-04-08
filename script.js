@@ -9,6 +9,15 @@ const projects = [
         demo: "https://regplus.reganalytics.com",
         technologies: [".Net 6", "C#","React", "Typscript", "MSSQL", "AWS S3"],
     },
+    {
+        title: "Akij ERP",
+        company: "AKIJ iBOS",
+        description: "Akij ERP Enterprise Resource Planning software and services",
+        image: "./assets/iBOS-new-logo-2048x442.webp",
+        // github: "https://github.com",
+        demo: "https://ibos.io/",
+        technologies: [".Net 5", "C#", "MSSQL", "Azure"],
+    },
 ];
 
 const skills = [
@@ -73,7 +82,7 @@ function displayProjects() {
     projectsGrid.innerHTML = projects.map(project => `
         <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-1 transition-transform duration-300 relative">
             <!-- Company Name Badge -->
-            <div class="absolute top-2 right-2 bg-yellow-500 text-white text-sm px-3 py-1 rounded-full shadow-md">
+            <div class="absolute top-2 right-2 bg-blue-500 text-white text-sm px-3 py-1 rounded-full shadow-md">
                 ${project.company}
             </div>
             
