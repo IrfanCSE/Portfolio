@@ -138,7 +138,7 @@ function displaySkils() {
                     cy="18"
                 />
                 <circle
-                    class="text-blue-500 stroke-current"
+                    class="text-indigo-500 stroke-current"
                     stroke-width="3"
                     stroke-dasharray="${skill.percentage}, 100"
                     fill="transparent"
@@ -149,11 +149,11 @@ function displaySkils() {
                 />
             </svg>
             <div
-                class="absolute inset-0 flex items-center justify-center text-gray-700 font-semibold">
+                class="absolute inset-0 flex items-center justify-center text-gray-100 font-semibold">
                 ${skill.percentage}%
             </div>
         </div>
-        <h3 class="text-lg font-semibold mt-4">${skill.name}</h3>
+        <h3 class="text-lg font-semibold mt-4 text-white">${skill.name}</h3>
     </div>`
     )
     .join("");
