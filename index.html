@@ -24,11 +24,37 @@
             animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
         }
 
-        /* Mobile background fix */
         #home {
-            background-image: url('./assets/desktop_image.jpg');
+            background-image: url('./assets/banner.jpg');
             background-position: center;
             background-size: cover;
+        }
+
+        .hover-bright-bg {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hover-bright-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url('./assets/sub-banner.jpg');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            transition: filter 0.4s ease;
+            z-index: 0;
+            opacity: 0.1;
+        }
+
+        .hover-bright-bg:hover::before {
+            opacity: 0.2;
+        }
+
+        .hover-bright-bg>* {
+            position: relative;
+            z-index: 1;
         }
 
         /* Responsive text adjustments */
@@ -40,36 +66,15 @@
             }
         }
 
-        /* Existing neon classes */
-        .neon-yellow {
-            color: #e8ff00;
-            text-shadow: 0 0 5px #e8ff00, 0 0 10px #e8ff00, 0 0 20px #e8ff00;
-        }
-
-        .neon-blue {
-            color: #00ffff;
-            text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff;
-        }
-
-        .neon-pink {
-            color: #ff00ff;
-            text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff00ff;
-        }
-
-        .neon-red {
-            color: #ff003c;
-            /* Neon purple color */
-            text-shadow: 0 0 5px #ff003c, 0 0 10px #ff003c, 0 0 20px #ff003c, 0 0 40px #ff003c;
-        }
-
         .nav-links a.active {
-            color: #007BFF;
+            color: #ffffff;
             /* Change the text color to blue (or any color you want) */
             font-weight: bold;
             /* Make the text bold */
             text-decoration: underline;
             /* Add an underline to the active link */
-            background-color: rgba(0, 123, 255, 0.1);
+            background-color: #6366f1;
+            /* background-color: rgba(0, 123, 255, 0.1); */
             /* Add a light background for emphasis */
             padding: 5px 10px;
             /* Add some padding around the text */
@@ -95,17 +100,17 @@
             }
 
             50% {
-                border-color: #3B82F6
+                border-color: #6366f1
             }
         }
     </style>
 </head>
 
 <body class="bg-neutral-50">
-    <nav class="navbar fixed top-0 w-full bg-white shadow-md z-50">
+    <nav class="navbar fixed top-0 w-full bg-indigo-100 shadow-md z-50">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <div onclick="window.location.href='#top'" class="text-2xl font-bold cursor-pointer">
-                Dev.<span class="text-blue-500">Irfan</span>
+                Dev.<span class="text-indigo-500">Irfan</span>
             </div>
             <ul class="nav-links hidden md:flex space-x-2">
                 <li><a href="#home" class="text-gray-700 hover:text-blue-500 transition-colors underline font-bold">I’m
@@ -144,7 +149,7 @@
         </div>
         <!-- Mobile Menu -->
         <div class="nav-links hidden md:hidden" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1 bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 bg-indigo-100 shadow-lg">
                 <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-blue-500 rounded-md font-medium">I'm
                     Irfan</a>
                 <a href="#about"
@@ -457,7 +462,7 @@
         </div>
     </section>
 
-    <section id="about" class="py-20 hover:bg-sky-50 duration-300">
+    <section id="about" class="hover-bright-bg py-20 hover:bg-indigo-100 duration-300">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-bold text-blue-800 text-center mb-12">About Me</h2>
             <div class="max-w-3xl mx-auto text-gray-600 text-lg space-y-6 filter grayscale hover:grayscale-0">
@@ -474,7 +479,7 @@
 
 
 
-    <section id="experience" class="bg-neutral-100 py-20 hover:bg-sky-100">
+    <section id="experience" class="hover-bright-bg bg-neutral-100 py-20 hover:bg-indigo-100">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl text-blue-800 font-bold text-center mb-12">Work Experiences <span id="date-difference"
                     class="align-super text-sm text-zinc-950"></span></h2>
@@ -545,7 +550,7 @@
             </div>
     </section>
 
-    <section id="skills" class="py-20 hover:bg-sky-50">
+    <section id="skills" class="hover-bright-bg py-20 hover:bg-indigo-100">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl text-blue-800 font-bold text-center mb-12">Professional Skills</h2>
             <div id="skills-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
@@ -620,7 +625,7 @@
         </div>
     </section>
 
-    <section id="projects" class="py-20 bg-neutral-100 hover:bg-sky-100">
+    <section id="projects" class="hover-bright-bg py-20 bg-neutral-100 hover:bg-indigo-100">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl text-blue-800 font-bold text-center mb-12">Projects</h2>
             <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -629,7 +634,7 @@
         </div>
     </section>
 
-    <section id="contact" class="h-screen py-20 hover:bg-sky-50">
+    <section id="contact" class="hover-bright-bg h-screen py-20 hover:bg-indigo-100">
         <div class="container mx-auto px-4 mb-6">
             <h2 class="text-4xl text-blue-800 font-bold text-center mb-12">Contact Me</h2>
 
