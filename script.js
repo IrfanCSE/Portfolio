@@ -1,31 +1,8 @@
-// Project Data
-const projects = [
-    {
-        title: "RegAnalytics",
-        company: "Kaz Software",
-        description: "RegAnalytics Software and services for regulatory compliance",
-        image: "./assets/reg.png",
-        // github: "https://github.com",
-        demo: "https://regplus.reganalytics.com",
-        technologies: [".Net 6", "C#","React", "Typscript", "MSSQL", "AWS S3"],
-    },
-    {
-        title: "Akij ERP",
-        company: "AKIJ iBOS",
-        description: "Akij ERP Enterprise Resource Planning software and services",
-        image: "./assets/iBOS-new-logo-2048x442.webp",
-        // github: "https://github.com",
-        demo: "https://ibos.io/",
-        technologies: [".Net 5", "C#", "MSSQL", "Azure"],
-    },
-];
-
-const skills = [
-    { name: ".NET (C#)", percentage: 90 },
-    { name: "MSSQL (SQL)", percentage: 90 },
-    { name: "Ts & Js", percentage: 80 },
-    { name: "React", percentage: 80 }
-];
+// Data placeholders (will be loaded from JSON)
+let projects = [];
+let skills = [];
+let startDate = '2021-01-01';
+let typewriterText = '<Full Stack Software Developer/>';
 
 // DOM Elements
 const hamburger = document.querySelector('#hamburger');
@@ -209,23 +186,47 @@ function revealOnScroll() {
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {    
-    displaySkils();
-    displayProjects();
-    calculateDateDifference();
-    
-    // Initialize typewriter effect
-    const typewriterElement = document.querySelector('.typewriter');
-    if (typewriterElement) {
-        typeWriter(typewriterElement, '<Full Stack Software Developer/>');
-    }
-    
-    // Add scroll event listeners
-    window.addEventListener('scroll', () => {
-        setActiveLink();
-        revealOnScroll();
-    });
-    
-    // Initial checks
-    setActiveLink();
-    revealOnScroll();
+    // Load data from JSON and then initialize UI
+    loadSiteData()
+        .then(() => {
+            displaySkils();
+            displayProjects();
+            calculateDateDifference();
+
+            // Initialize typewriter effect
+            const typewriterElement = document.querySelector('.typewriter');
+            if (typewriterElement) {
+                typeWriter(typewriterElement, typewriterText);
+            }
+
+            // Add scroll event listeners
+            window.addEventListener('scroll', () => {
+                setActiveLink();
+                revealOnScroll();
+            });
+
+            // Initial checks
+            setActiveLink();
+            revealOnScroll();
+        })
+        .catch(err => {
+            console.error('Failed to load site data:', err);
+        });
 }); 
+
+// Load JSON data from `data/site-data.json`
+async function loadSiteData() {
+    try {
+        const res = await fetch('./data/site-data.json', { cache: 'no-cache' });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+
+        if (Array.isArray(data.projects)) projects = data.projects;
+        if (Array.isArray(data.skills)) skills = data.skills;
+        if (data.startDate) startDate = data.startDate;
+        if (data.typewriterText) typewriterText = data.typewriterText;
+    } catch (error) {
+        console.error('Error fetching site data JSON:', error);
+        throw error;
+    }
+}

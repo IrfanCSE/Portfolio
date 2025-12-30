@@ -1,0 +1,28 @@
+{
+  "startDate": "2021-01-01",
+  "typewriterText": "<Full Stack Software Developer/>",
+  "projects": [
+    {
+      "title": "RegAnalytics",
+      "company": "Kaz Software",
+      "description": "RegAnalytics Software and services for regulatory compliance",
+      "image": "./assets/reg.png",
+      "demo": "https://regplus.reganalytics.com",
+      "technologies": [".Net 6", "C#", "React", "Typscript", "MSSQL", "AWS S3"]
+    },
+    {
+      "title": "Akij ERP",
+      "company": "AKIJ iBOS",
+      "description": "Akij ERP Enterprise Resource Planning software and services",
+      "image": "./assets/iBOS-new-logo-2048x442.webp",
+      "demo": "https://ibos.io/",
+      "technologies": [".Net 5", "C#", "MSSQL", "Azure"]
+    }
+  ],
+  "skills": [
+    { "name": ".NET (C#)", "percentage": 90 },
+    { "name": "MSSQL (SQL)", "percentage": 90 },
+    { "name": "Ts & Js", "percentage": 80 },
+    { "name": "React", "percentage": 80 }
+  ]
+}
