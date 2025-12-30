@@ -2,7 +2,7 @@
   <strong style="font-size:48px">Irfanul Hasan</strong>
   <br>
   <span style="font-size:1.05em; color:gray">Software Engineer</span>
-  <p style="margin-top:8px; color:#6b7280">Software Engineer since 2021</p>
+  <p style="margin-top:8px; color:#6b7280">Turning ideas into production systems since 2021</p>
 </p>
 
 ---
