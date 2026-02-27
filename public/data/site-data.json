@@ -17,16 +17,14 @@
     "backgroundImage": "/assets/banner.jpg",
     "techIcons": [
       { "name": "C#", "iconKey": "csharp" },
-      { "name": ".NET", "iconKey": "dotnet" },
       { "name": "JavaScript", "iconKey": "javascript" },
       { "name": "TypeScript", "iconKey": "typescript" },
+      { "name": ".NET", "iconKey": "dotnet" },
       { "name": "React", "iconKey": "react" },
       { "name": "Angular", "iconKey": "angular" }
     ],
     "stats": [
-      { "label": "Years Experience", "value": 5, "suffix": "+" },
-      { "label": "Projects Delivered", "value": 10, "suffix": "+" },
-      { "label": "Technologies", "value": 15, "suffix": "+" }
+      { "label": "Years Experience", "value": 5, "suffix": "+" }
     ]
   },
   "about": {
@@ -160,28 +158,5 @@
     "text": "Irfanul Hasan",
     "year": 2024
   },
-  "blog": [
-    {
-      "title": "Building Scalable .NET Microservices with Clean Architecture",
-      "url": "https://dev.to/",
-      "date": "2025-11-10",
-      "platform": "Dev.to",
-      "tags": [".NET", "Microservices", "Architecture"]
-    },
-    {
-      "title": "React + TypeScript: Patterns I Wish I Knew Earlier",
-      "url": "https://dev.to/",
-      "date": "2025-09-22",
-      "platform": "Dev.to",
-      "tags": ["React", "TypeScript", "Frontend"]
-    },
-    {
-      "title": "Optimizing MSSQL Queries for High-Traffic ERP Systems",
-      "url": "https://dev.to/",
-      "date": "2025-07-14",
-      "platform": "Dev.to",
-      "tags": ["MSSQL", "Performance", "ERP"]
-    }
-  ],
   "startDate": "2021-01-01"
 }

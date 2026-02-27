@@ -41,7 +41,7 @@ function AppContent() {
         <Experience experience={data.experience} startDate={data.startDate} />
         <Skills skills={data.skills} />
         <Projects projects={data.projects} />
-        {data.blog && data.blog.length > 0 && <Blog blog={data.blog} />}
+        {data?.blog && data?.blog?.length > 0 && <Blog blog={data.blog} />}
         <Contact contact={data.contact} />
       </main>
       <Footer footer={data.footer} />
