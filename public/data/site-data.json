@@ -105,7 +105,7 @@
       "demo": "https://regplus.reganalytics.com",
       "github": null,
       "technologies": [".NET 6", "C#", "React", "TypeScript", "MSSQL", "AWS S3"],
-      "featured": true
+      "featured": false
     },
     {
       "title": "Akij ERP",
@@ -139,10 +139,10 @@
         "color": "text-emerald-500"
       },
       {
-        "platform": "Skype",
-        "url": "skype:live:.cid.4dd1c73adfe1ae47?call",
-        "icon": "FaSkype",
-        "label": "Skype Call",
+        "platform": "Teams",
+        "url": "https://teams.microsoft.com/l/chat/0/0?users=irfan.dev.bd@gmail.com",
+        "icon": "SiMicrosoftteams",
+        "label": "Teams Chat",
         "color": "text-blue-500"
       },
       {

@@ -3,18 +3,18 @@ import { motion } from 'framer-motion';
 import {
   FaEnvelope,
   FaPhoneAlt,
-  FaSkype,
   FaLinkedin,
   FaCopy,
   FaCheck,
 } from 'react-icons/fa';
+import { BsMicrosoftTeams } from 'react-icons/bs';
 import { useSpotlight } from '../hooks/useSpotlight';
 import type { Contact as ContactType } from '../types/SiteData';
 
 const iconMap: Record<string, React.ReactNode> = {
   FaEnvelope: <FaEnvelope />,
   FaPhoneAlt: <FaPhoneAlt />,
-  FaSkype: <FaSkype />,
+  SiMicrosoftteams: <BsMicrosoftTeams />,
   FaLinkedin: <FaLinkedin />,
 };
 
