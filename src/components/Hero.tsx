@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
+import { FaArrowDown, FaDownload } from 'react-icons/fa';
 import {
   SiSharp,
   SiDotnet,
@@ -11,12 +12,12 @@ import {
 import type { Hero as HeroType, Personal } from '../types/SiteData';
 
 const iconMap: Record<string, React.ReactNode> = {
-  csharp: <SiSharp className="text-2xl sm:text-3xl" />,
-  dotnet: <SiDotnet className="text-2xl sm:text-3xl" />,
-  javascript: <SiJavascript className="text-2xl sm:text-3xl" />,
-  typescript: <SiTypescript className="text-2xl sm:text-3xl" />,
-  react: <SiReact className="text-2xl sm:text-3xl" />,
-  angular: <SiAngular className="text-2xl sm:text-3xl" />,
+  csharp: <SiSharp />,
+  dotnet: <SiDotnet />,
+  javascript: <SiJavascript />,
+  typescript: <SiTypescript />,
+  react: <SiReact />,
+  angular: <SiAngular />,
 };
 
 interface HeroProps {
@@ -24,94 +25,129 @@ interface HeroProps {
   personal: Personal;
 }
 
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.15 },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-};
+const fadeUp = (delay = 0) => ({
+  initial: { opacity: 0, y: 24 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.55, delay, ease: 'easeOut' as const },
+});
 
 export default function Hero({ hero, personal }: HeroProps) {
-  // Build sequence for TypeAnimation: [text, delay, text, delay, ...]
-  const typeSequence = hero.typewriterTexts.flatMap((t) => [t, 2000]);
+  const typeSequence = hero.typewriterTexts.flatMap((t) => [t, 2200]);
 
   return (
-    <section
-      id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
-    >
-      {/* Background */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${hero.backgroundImage})` }}
-      >
-        <div className="absolute inset-0 bg-black/60" />
-      </div>
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-surface-50 to-accent-200/20 dark:from-surface-950 dark:via-surface-950 dark:to-primary-950/40" />
 
-      {/* Content */}
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        className="relative z-10 section-container text-center text-white py-20"
-      >
-        <motion.div
-          variants={itemVariants}
-          className="inline-block bg-surface-800/70 backdrop-blur-sm rounded-2xl p-6 sm:p-10 md:p-14 max-w-3xl mx-auto"
-        >
-          <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
-            {hero.greeting}{' '}
-            <span className="text-accent-200">{personal.name}</span>
-          </motion.h1>
+      {/* Decorative blobs */}
+      <div className="absolute top-1/4 right-10 w-[480px] h-[480px] bg-primary-400/10 dark:bg-primary-600/8 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 left-0 w-[360px] h-[360px] bg-accent-400/8 dark:bg-accent-500/6 rounded-full blur-3xl pointer-events-none" />
 
-          <motion.div variants={itemVariants} className="font-mono text-xl sm:text-2xl mb-8 h-10 flex items-center justify-center">
-            <span className="text-primary-300">&lt;</span>
-            <TypeAnimation
-              sequence={typeSequence}
-              wrapper="span"
-              speed={50}
-              repeat={Infinity}
-              className="text-white"
-            />
-            <span className="text-primary-300">/&gt;</span>
-          </motion.div>
+      <div className="relative z-10 section-container w-full pt-32 pb-24">
+        <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center">
+          {/* ── Left: Text content ── */}
+          <div>
+            <motion.span {...fadeUp(0)} className="section-label">
+              {hero.greeting}
+            </motion.span>
 
-          {/* Tech icons */}
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-wrap justify-center gap-3 mb-8"
-          >
-            {hero.techIcons.map((icon, i) => (
-              <motion.span
-                key={icon.iconKey}
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.8 + i * 0.1 }}
-                whileHover={{ y: -5, scale: 1.15 }}
-                className="p-3 bg-surface-900/60 rounded-xl shadow-lg flex flex-col items-center gap-1 cursor-default"
-              >
-                {iconMap[icon.iconKey] ?? null}
-                <span className="text-xs font-bold">{icon.name}</span>
-              </motion.span>
-            ))}
-          </motion.div>
-
-          {/* CTA */}
-          <motion.div variants={itemVariants}>
-            <a
-              href="#contact"
-              className="inline-block bg-accent-400 text-surface-900 px-8 py-3 rounded-full font-semibold hover:bg-accent-300 hover:scale-105 transition-all shadow-lg no-underline"
+            <motion.h1
+              {...fadeUp(0.12)}
+              className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-5 text-surface-900 dark:text-white leading-[1.05]"
             >
-              {hero.ctaText}
-            </a>
+              {personal.name.split(' ')[0]}{' '}
+              <span className="gradient-text">
+                {personal.name.split(' ').slice(1).join(' ')}
+              </span>
+            </motion.h1>
+
+            <motion.div
+              {...fadeUp(0.24)}
+              className="flex items-center gap-2 font-mono text-base sm:text-lg text-surface-500 dark:text-surface-400 mb-10 h-7"
+            >
+              <span className="text-primary-400 text-xl">›</span>
+              <TypeAnimation
+                sequence={typeSequence}
+                wrapper="span"
+                speed={55}
+                repeat={Infinity}
+              />
+              <span className="animate-pulse text-primary-400">_</span>
+            </motion.div>
+
+            {/* Stats strip */}
+            {hero.stats && hero.stats.length > 0 && (
+              <motion.div
+                {...fadeUp(0.36)}
+                className="flex flex-wrap gap-8 mb-10"
+              >
+                {hero.stats.map((stat) => (
+                  <div key={stat.label}>
+                    <div className="text-3xl font-bold tabular-nums text-surface-900 dark:text-white">
+                      {stat.value}
+                      <span className="gradient-text">{stat.suffix ?? ''}</span>
+                    </div>
+                    <div className="text-sm text-surface-500 dark:text-surface-400 mt-0.5">
+                      {stat.label}
+                    </div>
+                  </div>
+                ))}
+              </motion.div>
+            )}
+
+            {/* CTAs */}
+            <motion.div
+              {...fadeUp(0.46)}
+              className="flex flex-wrap items-center gap-3"
+            >
+              <a
+                href="#projects"
+                className="inline-flex items-center gap-2 bg-primary-600 text-white px-7 py-3 rounded-full font-semibold hover:bg-primary-700 transition-all shadow-lg shadow-primary-600/25 no-underline text-sm"
+              >
+                {hero.ctaText} <FaArrowDown size={13} />
+              </a>
+              <a
+                href={personal.resumePath}
+                download
+                className="inline-flex items-center gap-2 border border-surface-300 dark:border-surface-700 text-surface-600 dark:text-surface-300 px-7 py-3 rounded-full font-semibold hover:border-primary-400 hover:text-primary-600 dark:hover:text-primary-400 transition-all no-underline text-sm"
+              >
+                <FaDownload size={13} /> Download CV
+              </a>
+            </motion.div>
+          </div>
+
+          {/* ── Right: Tech icon grid ── */}
+          <motion.div
+            initial={{ opacity: 0, x: 32 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.4, ease: 'easeOut' }}
+            className="hidden lg:flex flex-col items-center justify-center"
+          >
+            <div className="grid grid-cols-3 gap-4 w-full max-w-xs">
+              {hero.techIcons.map((icon, i) => (
+                <motion.div
+                  key={icon.iconKey}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.55 + i * 0.08, duration: 0.45 }}
+                  whileHover={{ y: -5, scale: 1.06 }}
+                  className="bg-white dark:bg-surface-800/70 border border-surface-200 dark:border-surface-700/60 rounded-2xl p-5 flex flex-col items-center gap-2.5 shadow-sm cursor-default"
+                >
+                  <span className="text-3xl text-surface-700 dark:text-surface-200">
+                    {iconMap[icon.iconKey] ?? null}
+                  </span>
+                  <span className="text-xs font-medium text-surface-500 dark:text-surface-400">
+                    {icon.name}
+                  </span>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Subtle ring decoration */}
+            <div className="absolute opacity-20 dark:opacity-10 w-80 h-80 rounded-full border-2 border-primary-400 pointer-events-none" />
           </motion.div>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </section>
   );
 }

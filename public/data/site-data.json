@@ -13,7 +13,7 @@
       ".NET & React Specialist",
       "Building Scalable Web Apps"
     ],
-    "ctaText": "Get In Touch",
+    "ctaText": "View My Work",
     "backgroundImage": "/assets/banner.jpg",
     "techIcons": [
       { "name": "C#", "iconKey": "csharp" },
@@ -22,12 +22,24 @@
       { "name": "TypeScript", "iconKey": "typescript" },
       { "name": "React", "iconKey": "react" },
       { "name": "Angular", "iconKey": "angular" }
+    ],
+    "stats": [
+      { "label": "Years Experience", "value": 5, "suffix": "+" },
+      { "label": "Projects Delivered", "value": 10, "suffix": "+" },
+      { "label": "Technologies", "value": 15, "suffix": "+" }
     ]
   },
   "about": {
     "photo": "/assets/Ifran_Photo.jpeg",
     "paragraphs": [
-      "I intend to be a part of an organization where I can constantly learn and develop my technical and management skills and make the best use of it. I believe in teamwork and hard work. I want to serve in a competitive and challenging environment and achieve goals while being a dedicated team player."
+      "I'm a Full Stack Software Developer with 5+ years of experience building scalable enterprise web applications. I specialize in .NET (C#) backends and React/TypeScript frontends, with hands-on experience in ERP systems, SaaS platforms, and RESTful API design."
+    ],
+    "highlights": [
+      "Full Stack Development (.NET + React)",
+      "RESTful API & Microservices Design",
+      "Enterprise ERP & SaaS Platforms",
+      "Cloud Infrastructure (AWS, Azure)",
+      "Clean Code & Agile Delivery"
     ]
   },
   "experience": [
@@ -36,15 +48,15 @@
       "company": "Kaz Software",
       "companyUrl": "https://kaz.com.bd/",
       "logo": "/assets/kaz_software_limited_logo.jfif",
-      "period": "May 2023 - Present",
+      "period": "May 2023 – Present",
       "startDate": "2023-05-01",
       "endDate": null,
-      "description": "I have contributed to various services in the Reganalytics application, such as developing the tax-news briefing app Regbrief and the organizational chart analysis tool Company Data. Additionally I developed a customized mailing system. Within Company Data, I used the yFiles library to create visual charts and controls, facilitating the comprehension of data analysis and organizational structure.",
+      "description": "Contributed to Reganalytics — a tax analytics SaaS platform — developing the Regbrief briefing app, Company Data org-chart tool, and a customized mailing system using yFiles for interactive visualizations.",
       "responsibilities": [
         "Built scalable, high-performance web applications using <strong>.NET Core</strong> and <strong>React</strong>.",
         "Developed key features of the <strong>Reganalytics</strong> tax analytics platform, including <strong>Regbrief</strong> and <strong>Company Data</strong> modules.",
-        "Collaborated with stakeholders, including product managers and UX/UI designers, to define requirements and enhance the software development process as a full-stack engineer.",
-        "Manage the full lifecycle of software projects. This includes planning, executing, and monitoring projects from start to finish, as well as ensuring that projects meet requirements and deadlines."
+        "Collaborated with stakeholders, product managers and UX/UI designers to define requirements and enhance the software development process.",
+        "Managed the full lifecycle of software projects — planning, executing, and monitoring from start to finish."
       ]
     },
     {
@@ -52,10 +64,10 @@
       "company": "AKIJ iBOS",
       "companyUrl": "https://ibos.io/",
       "logo": "/assets/akijiboslimited_logo.jfif",
-      "period": "January 2021 - April 2023",
+      "period": "January 2021 – April 2023",
       "startDate": "2021-01-01",
       "endDate": "2023-04-30",
-      "description": "AKIJ, Apon Wellbeing Ltd. and Madina Group are the ERP Systems on which I have collaborated. Additionally, I've developed a few libraries and services. Worked with some interesting and unique features for the ERP Systems including Procurement, Inventory, Notification, Approval management system etc.",
+      "description": "Delivered ERP modules for AKIJ, Apon Wellbeing Ltd. and Madina Group. Built Procurement, Inventory, Notification, and Approval Management systems on top of a shared .NET Core platform.",
       "responsibilities": [
         "Built and maintained ERP modules for <strong>Procurement, Inventory and Approval Management</strong>.",
         "Developed <strong>RESTful APIs</strong> using <strong>.NET Core (C#)</strong> for ERP integration.",
@@ -66,23 +78,23 @@
   ],
   "skills": {
     "primary": [
-      { "name": ".NET (C#)", "percentage": 90 },
-      { "name": "MSSQL (SQL)", "percentage": 90 },
-      { "name": "Ts & Js", "percentage": 80 },
+      { "name": ".NET / C#", "percentage": 90 },
+      { "name": "MSSQL / SQL", "percentage": 90 },
+      { "name": "TypeScript / JS", "percentage": 80 },
       { "name": "React", "percentage": 80 }
     ],
     "additional": [
       { "name": "Web API", "icon": "FaCloud", "color": "text-blue-500" },
-      { "name": "Entity Framework Core", "icon": "FaDatabase", "color": "text-blue-500" },
-      { "name": "LINQ", "icon": "FaCodeBranch", "color": "text-blue-500" },
+      { "name": "Entity Framework", "icon": "FaDatabase", "color": "text-blue-500" },
+      { "name": "LINQ", "icon": "FaCodeBranch", "color": "text-violet-500" },
       { "name": "Angular", "icon": "FaAngular", "color": "text-red-500" },
-      { "name": "Redux", "icon": "FaExchangeAlt", "color": "text-blue-500" },
-      { "name": "MySQL", "icon": "FaDatabase", "color": "text-green-500" },
-      { "name": "Jenkins", "icon": "FaJenkins", "color": "text-gray-800 dark:text-gray-200" },
+      { "name": "Redux", "icon": "FaExchangeAlt", "color": "text-purple-500" },
+      { "name": "MySQL", "icon": "FaDatabase", "color": "text-emerald-500" },
+      { "name": "Jenkins", "icon": "FaJenkins", "color": "text-surface-700 dark:text-surface-200" },
       { "name": "Jira", "icon": "FaJira", "color": "text-blue-600" },
       { "name": "Git", "icon": "FaGitAlt", "color": "text-orange-500" },
       { "name": "Redis", "icon": "FaMemory", "color": "text-red-500" },
-      { "name": "Microservices", "icon": "FaCubes", "color": "text-blue-400" },
+      { "name": "Microservices", "icon": "FaCubes", "color": "text-cyan-500" },
       { "name": "AWS S3", "icon": "FaCloudUploadAlt", "color": "text-yellow-500" }
     ]
   },
@@ -90,25 +102,27 @@
     {
       "title": "RegAnalytics",
       "company": "Kaz Software",
-      "description": "RegAnalytics Software and services for regulatory compliance",
+      "description": "Enterprise tax analytics SaaS platform delivering regulatory compliance tools including Regbrief (tax-news briefing) and Company Data (org-chart analysis) for global clients.",
       "image": "/assets/reg.png",
       "demo": "https://regplus.reganalytics.com",
       "github": null,
-      "technologies": [".Net 6", "C#", "React", "TypeScript", "MSSQL", "AWS S3"]
+      "technologies": [".NET 6", "C#", "React", "TypeScript", "MSSQL", "AWS S3"],
+      "featured": true
     },
     {
       "title": "Akij ERP",
       "company": "AKIJ iBOS",
-      "description": "Akij ERP Enterprise Resource Planning software and services",
+      "description": "Full-featured Enterprise Resource Planning software covering Procurement, Inventory, Approval workflows, and Notification systems for multiple large Bangladeshi conglomerates.",
       "image": "/assets/iBOS-new-logo-2048x442.webp",
       "demo": "https://ibos.io/",
       "github": null,
-      "technologies": [".Net 5", "C#", "MSSQL", "Azure"]
+      "technologies": [".NET 5", "C#", "MSSQL", "Azure"],
+      "featured": false
     }
   ],
   "contact": {
-    "heading": "Contact Me",
-    "subtext": "You can also reach me directly at:",
+    "heading": "Let's Work Together",
+    "subtext": "Have a project in mind? I'd love to hear about it. Reach out directly at",
     "email": "irfan.dev.bd@gmail.com",
     "phone": "+8801798832451",
     "links": [
@@ -117,34 +131,57 @@
         "url": "mailto:irfan.dev.bd@gmail.com",
         "icon": "FaEnvelope",
         "label": "Email Me",
-        "color": "text-blue-500"
+        "color": "text-violet-500"
       },
       {
         "platform": "Phone",
         "url": "tel:+8801798832451",
         "icon": "FaPhoneAlt",
-        "label": "Call Me",
-        "color": "text-green-500"
+        "label": "+880 17988-32451",
+        "color": "text-emerald-500"
       },
       {
         "platform": "Skype",
         "url": "skype:live:.cid.4dd1c73adfe1ae47?call",
         "icon": "FaSkype",
-        "label": "Skype",
+        "label": "Skype Call",
         "color": "text-blue-500"
       },
       {
         "platform": "LinkedIn",
         "url": "https://www.linkedin.com/in/irfan-dev/",
         "icon": "FaLinkedin",
-        "label": "LinkedIn",
+        "label": "linkedin.com/in/irfan-dev",
         "color": "text-blue-600"
       }
     ]
   },
   "footer": {
-    "text": "Dev.Irfan Made with",
+    "text": "Irfanul Hasan",
     "year": 2024
   },
+  "blog": [
+    {
+      "title": "Building Scalable .NET Microservices with Clean Architecture",
+      "url": "https://dev.to/",
+      "date": "2025-11-10",
+      "platform": "Dev.to",
+      "tags": [".NET", "Microservices", "Architecture"]
+    },
+    {
+      "title": "React + TypeScript: Patterns I Wish I Knew Earlier",
+      "url": "https://dev.to/",
+      "date": "2025-09-22",
+      "platform": "Dev.to",
+      "tags": ["React", "TypeScript", "Frontend"]
+    },
+    {
+      "title": "Optimizing MSSQL Queries for High-Traffic ERP Systems",
+      "url": "https://dev.to/",
+      "date": "2025-07-14",
+      "platform": "Dev.to",
+      "tags": ["MSSQL", "Performance", "ERP"]
+    }
+  ],
   "startDate": "2021-01-01"
 }

@@ -1,10 +1,14 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
   FaEnvelope,
   FaPhoneAlt,
   FaSkype,
   FaLinkedin,
+  FaCopy,
+  FaCheck,
 } from 'react-icons/fa';
+import { useSpotlight } from '../hooks/useSpotlight';
 import type { Contact as ContactType } from '../types/SiteData';
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -18,93 +22,95 @@ interface ContactProps {
   contact: ContactType;
 }
 
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.1 },
-  },
-};
-
 const cardVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+  hidden: { opacity: 0, y: 16 },
+  visible: (i: number) => ({
+    opacity: 1, y: 0,
+    transition: { duration: 0.4, delay: i * 0.08 }
+  }),
 };
 
 export default function Contact({ contact }: ContactProps) {
+  const [copied, setCopied] = useState(false);
+  const { onMouseMove } = useSpotlight();
+
+  const copyEmail = () => {
+    navigator.clipboard.writeText(contact.email).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  };
+
   return (
-    <section id="contact" className="py-20 min-h-[80vh] flex items-center">
-      <div className="section-container w-full">
+    <section id="contact" className="py-24 bg-surface-50/50 dark:bg-surface-900/20">
+      <div className="section-container">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.6 }}
-          className="glass rounded-2xl p-8 md:p-12"
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="max-w-2xl"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">
-            {contact.heading.split(' ')[0]}{' '}
-            <span className="gradient-text">{contact.heading.split(' ').slice(1).join(' ')}</span>
+          <span className="section-label">Get in touch</span>
+          <h2 className="text-3xl sm:text-4xl font-bold text-surface-900 dark:text-white mb-4">
+            {contact.heading.split(' ').slice(0, 2).join(' ')}{' '}
+            <span className="gradient-text">
+              {contact.heading.split(' ').slice(2).join(' ')}
+            </span>
           </h2>
-
-          {/* Social links */}
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-3xl mx-auto mb-12"
-          >
-            {contact.links.map((link) => (
-              <motion.a
-                key={link.platform}
-                href={link.url}
-                target={link.url.startsWith('http') ? '_blank' : undefined}
-                rel={link.url.startsWith('http') ? 'noopener noreferrer' : undefined}
-                variants={cardVariants}
-                whileHover={{ y: -4, scale: 1.02 }}
-                className="flex items-center justify-center gap-3 p-5 bg-white dark:bg-surface-800 rounded-xl shadow-md hover:shadow-lg transition-shadow no-underline group"
-              >
-                <span className={`text-2xl ${link.color} group-hover:scale-110 transition-transform`}>
-                  {iconMap[link.icon] ?? <FaEnvelope />}
-                </span>
-                <span className="text-surface-700 dark:text-surface-200 font-medium">{link.label}</span>
-              </motion.a>
-            ))}
-          </motion.div>
-
-          {/* Email text */}
-          <div className="text-center">
-            <p className="text-surface-700 dark:text-surface-200">
-              {contact.subtext}{' '}
-              <a
-                href={`mailto:${contact.email}`}
-                className="text-primary-500 hover:text-primary-400 transition-colors font-medium"
-              >
-                {contact.email}
-              </a>
-            </p>
-          </div>
+          <p className="text-surface-600 dark:text-surface-400 mb-10 leading-relaxed">
+            {contact.subtext}{' '}
+            <button
+              onClick={copyEmail}
+              className="inline-flex items-center gap-1.5 font-semibold text-primary-600 dark:text-primary-400 hover:text-primary-700 cursor-pointer bg-transparent border-none p-0 text-base"
+              title="Click to copy"
+            >
+              {contact.email}
+              <span className="text-sm">
+                {copied ? <FaCheck className="text-emerald-500" /> : <FaCopy />}
+              </span>
+            </button>
+            {copied && (
+              <span className="ml-2 text-xs font-medium text-emerald-500">Copied!</span>
+            )}
+          </p>
         </motion.div>
 
-        {/* Scroll to top */}
-        <div className="flex justify-center mt-10">
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="bg-primary-500 text-white p-4 rounded-full shadow-lg hover:bg-primary-600 transition-colors cursor-pointer border-none"
-            aria-label="Scroll to top"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-              <path
-                fillRule="evenodd"
-                d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </motion.button>
+        {/* Contact link cards */}
+        <div
+          onMouseMove={onMouseMove}
+          className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl"
+        >
+          {contact.links.map((link, i) => (
+            <motion.a
+              key={link.platform}
+              custom={i}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              whileHover={{ y: -3 }}
+              href={link.url}
+              target={link.url.startsWith('http') ? '_blank' : undefined}
+              rel={link.url.startsWith('http') ? 'noopener noreferrer' : undefined}
+              className="card spotlight-card p-5 flex items-center gap-4 no-underline group hover:border-surface-300 dark:hover:border-surface-600 transition-colors"
+            >
+              <div className={`text-2xl ${link.color} flex-shrink-0 group-hover:scale-110 transition-transform relative z-10`}>
+                {iconMap[link.icon] ?? <FaEnvelope />}
+              </div>
+              <div className="relative z-10 min-w-0">
+                <div className="text-xs font-semibold text-surface-400 dark:text-surface-500 uppercase tracking-wider mb-0.5">
+                  {link.platform}
+                </div>
+                <div className="text-sm font-medium text-surface-700 dark:text-surface-200 truncate group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+                  {link.label}
+                </div>
+              </div>
+            </motion.a>
+          ))}
         </div>
       </div>
     </section>
   );
 }
+

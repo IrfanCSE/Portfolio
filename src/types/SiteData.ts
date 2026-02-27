@@ -11,17 +11,25 @@ export interface TechIcon {
   iconKey: string;
 }
 
+export interface HeroStat {
+  label: string;
+  value: number;
+  suffix?: string;
+}
+
 export interface Hero {
   greeting: string;
   typewriterTexts: string[];
   ctaText: string;
   backgroundImage: string;
   techIcons: TechIcon[];
+  stats?: HeroStat[];
 }
 
 export interface About {
   photo: string;
   paragraphs: string[];
+  highlights?: string[];
 }
 
 export interface Experience {
@@ -60,6 +68,7 @@ export interface Project {
   demo: string;
   github: string | null;
   technologies: string[];
+  featured?: boolean;
 }
 
 export interface ContactLink {
@@ -83,6 +92,14 @@ export interface Footer {
   year: number;
 }
 
+export interface BlogPost {
+  title: string;
+  url: string;
+  date: string;
+  platform: string;
+  tags: string[];
+}
+
 export interface SiteData {
   personal: Personal;
   hero: Hero;
@@ -93,4 +110,5 @@ export interface SiteData {
   contact: Contact;
   footer: Footer;
   startDate: string;
+  blog?: BlogPost[];
 }
