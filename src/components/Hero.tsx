@@ -132,9 +132,12 @@ export default function Hero({ hero, personal, startDate }: HeroProps) {
             initial={{ opacity: 0, x: 32 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.4, ease: 'easeOut' }}
-            className="hidden lg:flex flex-col items-center justify-center"
+            className="relative hidden lg:flex flex-col items-center justify-center"
           >
-            <div className="grid grid-cols-3 gap-4 w-full max-w-xs">
+            <div className="relative grid grid-cols-3 gap-4 w-full max-w-xs">
+              {/* Subtle ring decoration — centered on the grid */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-20 dark:opacity-10 w-80 h-80 rounded-full border-2 border-primary-400 pointer-events-none z-0" />
+
               {hero.techIcons.map((icon, i) => (
                 <motion.div
                   key={icon.iconKey}
@@ -142,7 +145,7 @@ export default function Hero({ hero, personal, startDate }: HeroProps) {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.55 + i * 0.08, duration: 0.45 }}
                   whileHover={{ y: -5, scale: 1.06 }}
-                  className="bg-white dark:bg-surface-800/70 border border-surface-200 dark:border-surface-700/60 rounded-2xl p-5 flex flex-col items-center gap-2.5 shadow-sm cursor-default"
+                  className="relative z-10 bg-white dark:bg-surface-800/70 border border-surface-200 dark:border-surface-700/60 rounded-2xl p-5 flex flex-col items-center gap-2.5 shadow-sm cursor-default"
                 >
                   <span className="text-3xl text-surface-700 dark:text-surface-200">
                     {iconMap[icon.iconKey] ?? null}
@@ -153,9 +156,6 @@ export default function Hero({ hero, personal, startDate }: HeroProps) {
                 </motion.div>
               ))}
             </div>
-
-            {/* Subtle ring decoration */}
-            <div className="absolute opacity-20 dark:opacity-10 w-80 h-80 rounded-full border-2 border-primary-400 pointer-events-none" />
           </motion.div>
         </div>
       </div>
