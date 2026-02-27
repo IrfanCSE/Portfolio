@@ -23,6 +23,14 @@ const iconMap: Record<string, React.ReactNode> = {
 interface HeroProps {
   hero: HeroType;
   personal: Personal;
+  startDate?: string;
+}
+
+function computeYears(startDate?: string): number {
+  if (!startDate) return 0;
+  const start = new Date(startDate);
+  const now = new Date();
+  return Math.floor((now.getTime() - start.getTime()) / (365.25 * 24 * 60 * 60 * 1000));
 }
 
 const fadeUp = (delay = 0) => ({
@@ -31,8 +39,11 @@ const fadeUp = (delay = 0) => ({
   transition: { duration: 0.55, delay, ease: 'easeOut' as const },
 });
 
-export default function Hero({ hero, personal }: HeroProps) {
+export default function Hero({ hero, personal, startDate }: HeroProps) {
   const typeSequence = hero.typewriterTexts.flatMap((t) => [t, 2200]);
+  const dynamicValues: Record<string, number> = {
+    yearsExp: computeYears(startDate),
+  };
 
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
@@ -84,7 +95,7 @@ export default function Hero({ hero, personal }: HeroProps) {
                 {hero.stats.map((stat) => (
                   <div key={stat.label}>
                     <div className="text-3xl font-bold tabular-nums text-surface-900 dark:text-white">
-                      {stat.value}
+                      {stat.dynamicKey ? (dynamicValues[stat.dynamicKey] ?? stat.value) : stat.value}
                       <span className="gradient-text">{stat.suffix ?? ''}</span>
                     </div>
                     <div className="text-sm text-surface-500 dark:text-surface-400 mt-0.5">

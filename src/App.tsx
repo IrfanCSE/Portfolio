@@ -36,7 +36,7 @@ function AppContent() {
     <>
       <Navbar personal={data.personal} />
       <main>
-        <Hero hero={data.hero} personal={data.personal} />
+        <Hero hero={data.hero} personal={data.personal} startDate={data.startDate} />
         <About about={data.about} startDate={data.startDate} />
         <Experience experience={data.experience} startDate={data.startDate} />
         <Skills skills={data.skills} />

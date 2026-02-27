@@ -24,7 +24,7 @@
       { "name": "Angular", "iconKey": "angular" }
     ],
     "stats": [
-      { "label": "Years Experience", "value": 5, "suffix": "+" }
+      { "label": "Years Experience", "value": null, "dynamicKey": "yearsExp", "suffix": "+" }
     ]
   },
   "about": {

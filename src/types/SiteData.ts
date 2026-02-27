@@ -13,7 +13,8 @@ export interface TechIcon {
 
 export interface HeroStat {
   label: string;
-  value: number;
+  value: number | null;
+  dynamicKey?: string;
   suffix?: string;
 }
 
