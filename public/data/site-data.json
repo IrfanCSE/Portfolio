@@ -30,7 +30,7 @@
   "about": {
     "photo": "/assets/Ifran_Photo.jpeg",
     "paragraphs": [
-      "I'm a Full Stack Software Developer with 5+ years of experience building scalable enterprise web applications. I specialize in .NET (C#) backends and React/TypeScript frontends, with hands-on experience in ERP systems, SaaS platforms, and RESTful API design."
+      "I'm a Full Stack Software Developer with {yearsExp}+ years of experience building scalable enterprise web applications. I specialize in .NET (C#) backends and React/TypeScript frontends, with hands-on experience in ERP systems, SaaS platforms, and RESTful API design."
     ],
     "highlights": [
       "Full Stack Development (.NET + React)",
@@ -49,7 +49,7 @@
       "period": "May 2023 – Present",
       "startDate": "2023-05-01",
       "endDate": null,
-      "description": "Contributed to Reganalytics — a tax analytics SaaS platform — developing the Regbrief briefing app, Company Data org-chart tool, and a customized mailing system using yFiles for interactive visualizations.",
+      "description": "Contributed to Reganalytics — a tax analytics SaaS platform — developing the Regbrief briefing app, Company Data org-chart tool, customized mailing system and used yFiles for interactive visualizations.",
       "responsibilities": [
         "Built scalable, high-performance web applications using <strong>.NET Core</strong> and <strong>React</strong>.",
         "Developed key features of the <strong>Reganalytics</strong> tax analytics platform, including <strong>Regbrief</strong> and <strong>Company Data</strong> modules.",

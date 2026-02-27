@@ -42,7 +42,7 @@ export default function Footer({ footer }: FooterProps) {
       <footer className="border-t border-surface-200 dark:border-surface-800 bg-white dark:bg-surface-950">
         <div className="section-container py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-surface-500 dark:text-surface-400">
-            &copy; {year} {footer.text}. Built with React & Tailwind CSS.
+            &copy; {year} {footer.text}.
           </p>
 
           <div className="flex items-center gap-4">

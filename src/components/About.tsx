@@ -4,9 +4,18 @@ import type { About as AboutType } from '../types/SiteData';
 
 interface AboutProps {
   about: AboutType;
+  startDate?: string;
 }
 
-export default function About({ about }: AboutProps) {
+function computeYears(startDate?: string): number {
+  if (!startDate) return 0;
+  const start = new Date(startDate);
+  const now = new Date();
+  return Math.floor((now.getTime() - start.getTime()) / (365.25 * 24 * 60 * 60 * 1000));
+}
+
+export default function About({ about, startDate }: AboutProps) {
+  const yearsExp = computeYears(startDate);
   return (
     <section id="about" className="py-24">
       <div className="section-container">
@@ -55,7 +64,7 @@ export default function About({ about }: AboutProps) {
                   key={i}
                   className="text-lg leading-relaxed text-surface-600 dark:text-surface-300"
                 >
-                  {p}
+                  {p.replace('{yearsExp}', String(yearsExp))}
                 </p>
               ))}
 
