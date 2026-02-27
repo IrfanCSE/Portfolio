@@ -53,12 +53,12 @@ export default function Projects({ projects }: ProjectsProps) {
             <div className="card spotlight-card overflow-hidden" onMouseMove={onMouseMove}>
               <div className="grid md:grid-cols-2 gap-0">
                 {/* Image */}
-                <div className="relative overflow-hidden h-56 md:h-auto">
+                <div className="relative overflow-hidden h-56 md:h-auto bg-surface-100 dark:bg-surface-800">
                   <img
                     src={featured.image}
                     alt={featured.title}
                     loading="lazy"
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-contain hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/5 dark:to-black/10" />
                 </div>
@@ -163,12 +163,12 @@ export default function Projects({ projects }: ProjectsProps) {
                 className="card spotlight-card overflow-hidden group"
               >
                 {/* Image */}
-                <div className="relative overflow-hidden h-44">
+                <div className="relative overflow-hidden h-44 bg-surface-100 dark:bg-surface-800">
                   <img
                     src={project.image}
                     alt={project.title}
                     loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute top-3 right-3">
                     <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-black/60 text-white backdrop-blur-sm">

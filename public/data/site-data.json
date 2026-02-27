@@ -100,7 +100,7 @@
       "title": "RegAnalytics",
       "company": "Kaz Software",
       "description": "Enterprise tax analytics SaaS platform delivering regulatory compliance tools including Regbrief (tax-news briefing) and Company Data (org-chart analysis) for global clients.",
-      "image": "/assets/reg.png",
+      "image": "/assets/logo_reg.webp",
       "demo": "https://regplus.reganalytics.com",
       "github": null,
       "technologies": [".NET 6", "C#", "React", "TypeScript", "MSSQL", "AWS S3"],
