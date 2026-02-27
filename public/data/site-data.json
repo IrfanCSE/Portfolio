@@ -14,7 +14,6 @@
       "Building Scalable Web Apps"
     ],
     "ctaText": "View My Work",
-    "backgroundImage": "/assets/banner.jpg",
     "techIcons": [
       { "name": "C#", "iconKey": "csharp" },
       { "name": "JavaScript", "iconKey": "javascript" },

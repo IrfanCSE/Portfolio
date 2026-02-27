@@ -22,7 +22,6 @@ export interface Hero {
   greeting: string;
   typewriterTexts: string[];
   ctaText: string;
-  backgroundImage: string;
   techIcons: TechIcon[];
   stats?: HeroStat[];
 }
