@@ -1,0 +1,161 @@
+{
+  "personal": {
+    "name": "Irfanul Hasan",
+    "shortName": "Irfan",
+    "title": "Full Stack Software Developer",
+    "brandName": "Dev.Irfan",
+    "resumePath": "/assets/Irfanul_Hasan.pdf"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "typewriterTexts": [
+      "Full Stack Software Developer",
+      ".NET & React Specialist",
+      "Building Scalable Web Apps"
+    ],
+    "ctaText": "View My Work",
+    "techIcons": [
+      { "name": "C#", "iconKey": "csharp" },
+      { "name": "JavaScript", "iconKey": "javascript" },
+      { "name": "TypeScript", "iconKey": "typescript" },
+      { "name": ".NET", "iconKey": "dotnet" },
+      { "name": "React", "iconKey": "react" },
+      { "name": "Angular", "iconKey": "angular" }
+    ],
+    "stats": [
+      { "label": "Years Experience", "value": null, "dynamicKey": "yearsExp", "suffix": "+" }
+    ]
+  },
+  "about": {
+    "photo": "/assets/Ifran_Photo.jpeg",
+    "paragraphs": [
+      "I'm a Full Stack Software Developer with {yearsExp}+ years of experience building scalable enterprise web applications. I specialize in .NET (C#) backends and React/TypeScript frontends, with hands-on experience in ERP systems, SaaS platforms, and RESTful API design."
+    ],
+    "highlights": [
+      "Full Stack Development (.NET + React)",
+      "RESTful API & Microservices Design",
+      "Enterprise ERP & SaaS Platforms",
+      "Cloud Infrastructure (AWS, Azure)",
+      "Clean Code & Agile Delivery"
+    ]
+  },
+  "experience": [
+    {
+      "role": "Software Engineer",
+      "company": "Kaz Software",
+      "companyUrl": "https://kaz.com.bd/",
+      "logo": "/assets/kaz_software_limited_logo.jfif",
+      "period": "May 2023 – Present",
+      "startDate": "2023-05-01",
+      "endDate": null,
+      "description": "Contributed to Reganalytics — a tax analytics SaaS platform — developing the Regbrief briefing app, Company Data org-chart tool, customized mailing system and used yFiles for interactive visualizations.",
+      "responsibilities": [
+        "Built scalable, high-performance web applications using <strong>.NET Core</strong> and <strong>React</strong>.",
+        "Developed key features of the <strong>Reganalytics</strong> tax analytics platform, including <strong>Regbrief</strong> and <strong>Company Data</strong> modules.",
+        "Collaborated with stakeholders, product managers and UX/UI designers to define requirements and enhance the software development process.",
+        "Managed the full lifecycle of software projects — planning, executing, and monitoring from start to finish."
+      ]
+    },
+    {
+      "role": "Software Developer",
+      "company": "AKIJ iBOS",
+      "companyUrl": "https://ibos.io/",
+      "logo": "/assets/akijiboslimited_logo.jfif",
+      "period": "January 2021 – April 2023",
+      "startDate": "2021-01-01",
+      "endDate": "2023-04-30",
+      "description": "Delivered ERP modules for AKIJ, Apon Wellbeing Ltd. and Madina Group. Built Procurement, Inventory, Notification, and Approval Management systems on top of a shared .NET Core platform.",
+      "responsibilities": [
+        "Built and maintained ERP modules for <strong>Procurement, Inventory and Approval Management</strong>.",
+        "Developed <strong>RESTful APIs</strong> using <strong>.NET Core (C#)</strong> for ERP integration.",
+        "Implemented new features, resolved bugs, and optimized application performance.",
+        "Collaborated with cross-functional teams to deliver client-specific solutions."
+      ]
+    }
+  ],
+  "skills": {
+    "primary": [
+      { "name": ".NET / C#", "percentage": 90 },
+      { "name": "MSSQL / SQL", "percentage": 90 },
+      { "name": "TypeScript / JS", "percentage": 80 },
+      { "name": "React", "percentage": 80 }
+    ],
+    "additional": [
+      { "name": "Web API", "icon": "FaCloud", "color": "text-blue-500" },
+      { "name": "Entity Framework", "icon": "FaDatabase", "color": "text-blue-500" },
+      { "name": "LINQ", "icon": "FaCodeBranch", "color": "text-violet-500" },
+      { "name": "Angular", "icon": "FaAngular", "color": "text-red-500" },
+      { "name": "Redux", "icon": "FaExchangeAlt", "color": "text-purple-500" },
+      { "name": "MySQL", "icon": "FaDatabase", "color": "text-emerald-500" },
+      { "name": "Jenkins", "icon": "FaJenkins", "color": "text-surface-700 dark:text-surface-200" },
+      { "name": "Jira", "icon": "FaJira", "color": "text-blue-600" },
+      { "name": "Git", "icon": "FaGitAlt", "color": "text-orange-500" },
+      { "name": "Redis", "icon": "FaMemory", "color": "text-red-500" },
+      { "name": "Microservices", "icon": "FaCubes", "color": "text-cyan-500" },
+      { "name": "AWS S3", "icon": "FaCloudUploadAlt", "color": "text-yellow-500" }
+    ]
+  },
+  "projects": [
+    {
+      "title": "RegAnalytics",
+      "company": "Kaz Software",
+      "description": "Enterprise tax analytics SaaS platform delivering regulatory compliance tools including Regbrief (tax-news briefing) and Company Data (org-chart analysis) for global clients.",
+      "image": "/assets/logo_reg.webp",
+      "demo": "https://regplus.reganalytics.com",
+      "github": null,
+      "technologies": [".NET 6", "C#", "React", "TypeScript", "MSSQL", "AWS S3"],
+      "featured": false
+    },
+    {
+      "title": "Akij ERP",
+      "company": "AKIJ iBOS",
+      "description": "Full-featured Enterprise Resource Planning software covering Procurement, Inventory, Approval workflows, and Notification systems for multiple large Bangladeshi conglomerates.",
+      "image": "/assets/iBOS-new-logo-2048x442.webp",
+      "demo": "https://ibos.io/",
+      "github": null,
+      "technologies": [".NET 5", "C#", "MSSQL", "Azure"],
+      "featured": false
+    }
+  ],
+  "contact": {
+    "heading": "Let's Work Together",
+    "subtext": "Have a project in mind? I'd love to hear about it. Reach out directly at",
+    "email": "irfan.dev.bd@gmail.com",
+    "phone": "+8801798832451",
+    "links": [
+      {
+        "platform": "Email",
+        "url": "mailto:irfan.dev.bd@gmail.com",
+        "icon": "FaEnvelope",
+        "label": "Email Me",
+        "color": "text-violet-500"
+      },
+      {
+        "platform": "Phone",
+        "url": "tel:+8801798832451",
+        "icon": "FaPhoneAlt",
+        "label": "+880 17988-32451",
+        "color": "text-emerald-500"
+      },
+      {
+        "platform": "Teams",
+        "url": "https://teams.microsoft.com/l/chat/0/0?users=irfan.dev.bd@gmail.com",
+        "icon": "SiMicrosoftteams",
+        "label": "Teams Chat",
+        "color": "text-blue-500"
+      },
+      {
+        "platform": "LinkedIn",
+        "url": "https://www.linkedin.com/in/irfan-dev/",
+        "icon": "FaLinkedin",
+        "label": "linkedin.com/in/irfan-dev",
+        "color": "text-blue-600"
+      }
+    ]
+  },
+  "footer": {
+    "text": "Irfanul Hasan",
+    "year": 2024
+  },
+  "startDate": "2021-01-01"
+}
