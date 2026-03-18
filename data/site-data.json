@@ -4,7 +4,7 @@
     "shortName": "Irfan",
     "title": "Full Stack Software Developer",
     "brandName": "Dev.Irfan",
-    "resumePath": "/assets/Irfanul_Hasan.pdf"
+    "resumePath": "assets/Irfanul_Hasan.pdf"
   },
   "hero": {
     "greeting": "Hi, I'm",
@@ -27,7 +27,7 @@
     ]
   },
   "about": {
-    "photo": "/assets/Ifran_Photo.jpeg",
+    "photo": "assets/Ifran_Photo.jpeg",
     "paragraphs": [
       "I'm a Full Stack Software Developer with {yearsExp}+ years of experience building scalable enterprise web applications. I specialize in .NET (C#) backends and React/TypeScript frontends, with hands-on experience in ERP systems, SaaS platforms, and RESTful API design."
     ],
@@ -44,7 +44,7 @@
       "role": "Software Engineer",
       "company": "Kaz Software",
       "companyUrl": "https://kaz.com.bd/",
-      "logo": "/assets/kaz_software_limited_logo.jfif",
+      "logo": "assets/kaz_software_limited_logo.jfif",
       "period": "May 2023 – Present",
       "startDate": "2023-05-01",
       "endDate": null,
@@ -60,7 +60,7 @@
       "role": "Software Developer",
       "company": "AKIJ iBOS",
       "companyUrl": "https://ibos.io/",
-      "logo": "/assets/akijiboslimited_logo.jfif",
+      "logo": "assets/akijiboslimited_logo.jfif",
       "period": "January 2021 – April 2023",
       "startDate": "2021-01-01",
       "endDate": "2023-04-30",
@@ -100,7 +100,7 @@
       "title": "RegAnalytics",
       "company": "Kaz Software",
       "description": "Enterprise tax analytics SaaS platform delivering regulatory compliance tools including Regbrief (tax-news briefing) and Company Data (org-chart analysis) for global clients.",
-      "image": "/assets/logo_reg.webp",
+      "image": "assets/logo_reg.webp",
       "demo": "https://regplus.reganalytics.com",
       "github": null,
       "technologies": [".NET 6", "C#", "React", "TypeScript", "MSSQL", "AWS S3"],
@@ -110,7 +110,7 @@
       "title": "Akij ERP",
       "company": "AKIJ iBOS",
       "description": "Full-featured Enterprise Resource Planning software covering Procurement, Inventory, Approval workflows, and Notification systems for multiple large Bangladeshi conglomerates.",
-      "image": "/assets/iBOS-new-logo-2048x442.webp",
+      "image": "assets/iBOS-new-logo-2048x442.webp",
       "demo": "https://ibos.io/",
       "github": null,
       "technologies": [".NET 5", "C#", "MSSQL", "Azure"],
